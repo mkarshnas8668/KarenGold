@@ -6,4 +6,8 @@
     <string name="karen_studio">Karen Studio</string>
     <string name="price_gold">قیمت طلا</string>
     <string name="price_money">قیمت ارز</string>
+    <string name="try_again">تلاش مجدد</string>
+    <string name="exit">خروج</string>
+    <string name="check_connect">لطفاً اتصال اینترنت خود را بررسی کنید.</string>
+    <string name="no_internet">No Internet</string>
 </resources>
