@@ -7,6 +7,10 @@ android {
     namespace = "com.mkarshnas6.karenstudio.karengold"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.mkarshnas6.karenstudio.karengold"
         minSdk = 26

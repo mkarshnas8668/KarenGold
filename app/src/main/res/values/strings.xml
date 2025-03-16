@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Karen Gold</string>
+    <string name="img_splash">imgsplash</string>
+    <string name="price_gold_and_money">قیمت طلا و ارز</string>
+    <string name="description_splash">به روز ترین قیمت روز طلا و ارز جهان</string>
+    <string name="karen_studio">Karen Studio</string>
+    <string name="price_gold">قیمت طلا</string>
+    <string name="price_money">قیمت ارز</string>
 </resources>
