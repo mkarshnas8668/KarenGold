@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
+    android:layoutDirection="ltr"
     tools:context=".MainActivity">
 
 
@@ -13,8 +14,8 @@
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,9 +25,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="سه شنبه 14 فروردین 1403"
-        android:textColor="@color/black"
         android:fontFamily="@font/sans_fa_name_regular"
+        android:textColor="@color/black"
         android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -34,7 +34,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.36"
+        tools:text="سه شنبه 14 فروردین 1403" />
 
     <TextView
         android:id="@+id/textView5"
@@ -42,23 +43,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/sans_fa_name_bold"
-        tools:text="12 march 2018"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:text="12 march 2018" />
 
     <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:layout_marginTop="-15dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="-15dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/back_gray_view"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:ignore="RtlSymmetry" />
 
@@ -71,18 +72,34 @@
         android:background="@drawable/gravity_back_line"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.691"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="1.7dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/gravity_back_line"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txt_price_gold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_fa_name_regular"
         android:text="@string/price_gold"
+        android:textColor="@color/gold_text"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:fontFamily="@font/sans_fa_name_regular"
-        android:textColor="@color/gold_text"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toEndOf="@+id/view2"
@@ -92,15 +109,31 @@
         android:id="@+id/txt_price_money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/price_money"
-        android:textStyle="bold"
-        android:textSize="22sp"
         android:fontFamily="@font/sans_fa_name_regular"
+        android:text="@string/price_money"
         android:textColor="@color/white_text"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/view2"
+        app:layout_constraintStart_toEndOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.527" />
+
+    <TextView
+        android:id="@+id/txt_price_money3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_fa_name_regular"
+        android:text="@string/price_cryptocurrency"
+        android:textColor="@color/white_text"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/view4"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.527" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
