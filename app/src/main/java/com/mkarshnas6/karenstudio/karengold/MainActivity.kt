@@ -1,5 +1,6 @@
 package com.mkarshnas6.karenstudio.karengold
 
+import PersianDate
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,9 @@ import com.mkarshnas6.karenstudio.karengold.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +30,16 @@ class MainActivity : AppCompatActivity() {
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
+
+//   ....... set date on title page ................
+        val todayDate = Date()
+        val solarCalendar = PersianDate.Companion.SolarCalendar(todayDate)
+        val persianDate = "${solarCalendar.date} ${solarCalendar.strMonth} ${solarCalendar.year}"
+        binding.txtPersionDate.text = persianDate
+        val miladiFormat = SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH)
+        val miladiDate = miladiFormat.format(todayDate)
+        binding.txtMiladiDate.text = miladiDate
+        binding.txtPersionDate.setTextSize(30f)
 
         adapter = PriceAdapter(priceList)
         binding.recylerPrice.adapter = adapter
