@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/img_gold_18"
         app:layout_constraintEnd_toStartOf="@+id/img_gold_18"
         app:layout_constraintTop_toTopOf="@+id/img_gold_18"
-        app:layout_constraintVertical_bias="0.224"
+        app:layout_constraintVertical_bias="0.04"
         tools:text="گرم طلای 18 عیار" />
 
     <TextView
@@ -105,14 +105,13 @@
         android:id="@+id/txt_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/sans_fa_name_regular"
         android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@+id/txt_unit"
         app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/txt_unit"
+        app:layout_constraintStart_toEndOf="@+id/txt_change_percent"
         app:layout_constraintTop_toBottomOf="@+id/txt_unit"
         tools:text="15:07" />
 
@@ -126,6 +125,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt_price"
         app:layout_constraintVertical_bias="0.100000024" />
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sans_fa_name_regular"
+        android:textSize="13sp"
+        tools:text="1400/33/22"
+        app:layout_constraintEnd_toEndOf="@+id/txt_change_percent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_change_percent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_change_percent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

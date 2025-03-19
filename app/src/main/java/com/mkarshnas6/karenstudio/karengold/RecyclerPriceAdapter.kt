@@ -12,6 +12,7 @@ class PriceAdapter(private val priceList: List<PriceItem>) :
     class PriceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.txt_name)
         val price: TextView = view.findViewById(R.id.txt_price)
+        val date : TextView = view.findViewById(R.id.txt_date)
         val time: TextView = view.findViewById(R.id.txt_time)
         val unit: TextView = view.findViewById(R.id.txt_unit)
         val symbol: TextView = view.findViewById(R.id.txt_symbol)
@@ -30,6 +31,7 @@ class PriceAdapter(private val priceList: List<PriceItem>) :
 
         holder.name.text = item.name ?: "نام موجود نیست"
         holder.price.text = item.price?.let { "${it}" } ?: "قیمت موجود نیست"
+        holder.date.text = item.date ?: "تاریخ موجود نیست"
         holder.time.text = item.time ?: "زمان موجود نیست"
         holder.unit.text = item.unit ?: "واحد موجود نیست"
         holder.symbol.text = item.symbol ?: "نماد موجود نیست"
@@ -40,6 +42,7 @@ class PriceAdapter(private val priceList: List<PriceItem>) :
         val color = if (changePercent >= 0) android.graphics.Color.GREEN
         else android.graphics.Color.RED
         holder.color_change.setBackgroundColor(color)
+        holder.changePercent.setTextColor(color)
     }
 
     override fun getItemCount(): Int = priceList.size
