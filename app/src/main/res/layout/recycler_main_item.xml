@@ -30,32 +30,102 @@
         app:srcCompat="@drawable/ic_18" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:textColor="@color/white"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/sans_fa_name_regular"
-        android:textSize="20sp"
         android:gravity="center"
-        tools:text="گرم طلای 18 عیار"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_gold_18"
         app:layout_constraintEnd_toStartOf="@+id/img_gold_18"
-        app:layout_constraintTop_toTopOf="@+id/img_gold_18" />
+        app:layout_constraintTop_toTopOf="@+id/img_gold_18"
+        app:layout_constraintVertical_bias="0.224"
+        tools:text="گرم طلای 18 عیار" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/txt_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/gold_text"
+        android:layout_marginStart="8dp"
         android:fontFamily="@font/sans_fa_name_regular"
-        android:textSize="15sp"
         android:gravity="left"
-        tools:text="2/200/000T"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        android:textColor="@color/gold_text"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_name"
+        app:layout_constraintStart_toEndOf="@+id/color_show_change_price"
+        app:layout_constraintTop_toTopOf="@+id/txt_name"
+        tools:text="2/200/000" />
+
+    <TextView
+        android:id="@+id/txt_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        tools:text="تومان"
+        android:fontFamily="@font/sans_fa_name_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_price"
+        app:layout_constraintStart_toEndOf="@+id/txt_price"
+        app:layout_constraintTop_toTopOf="@+id/txt_price" />
+
+    <TextView
+        android:id="@+id/txt_change_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sans_fa_name_regular"
+        android:textColor="@color/green"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txt_price"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_price"
+        app:layout_constraintTop_toBottomOf="@+id/txt_price"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="16.00"
+        />
+
+    <TextView
+        android:id="@+id/txt_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sans_fa_name_regular"
+        tools:text="USD"
+        app:layout_constraintEnd_toEndOf="@+id/txt_name"
+        app:layout_constraintStart_toStartOf="@+id/txt_name"
+        app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sans_fa_name_regular"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_unit"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/txt_unit"
+        app:layout_constraintTop_toBottomOf="@+id/txt_unit"
+        tools:text="15:07" />
+
+    <View
+        android:id="@+id/color_show_change_price"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/green"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_price"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintTop_toTopOf="@+id/txt_price"
+        app:layout_constraintVertical_bias="0.100000024" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

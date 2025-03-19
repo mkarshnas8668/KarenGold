@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#0ADB13</color>
+    <color name="red">#FF0000</color>
 
     <color name="splash_gold">#9E6D01</color>
     <color name="splash_light_gold">#EDCA7C</color>
