@@ -1,3 +1,4 @@
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -54,10 +55,28 @@ class PriceAdapter(private val priceList: List<PriceItem>) :
 
         if (flagResource != 0) {
             holder.imgFlag.setImageResource(flagResource)
+
+            // کاهش اندازه تصویر به مقدار 5dp
+            val params = holder.imgFlag.layoutParams
+            params.width = dpToPx(holder.itemView.context, 70) // 75dp - 5dp
+            params.height = dpToPx(holder.itemView.context, 70) // 75dp - 5dp
+            holder.imgFlag.layoutParams = params
+
         } else {
-            holder.imgFlag.setImageResource(R.drawable.ic_18) // پرچم پیش‌فرض
+            holder.imgFlag.setImageResource(R.drawable.ic_18)
+            val params = holder.imgFlag.layoutParams
+            params.width = dpToPx(holder.itemView.context, 75)
+            params.height = dpToPx(holder.itemView.context, 75)
+            holder.imgFlag.layoutParams = params
         }
+
     }
+
+    fun dpToPx(context: Context, dp: Int): Int {
+        val density = context.resources.displayMetrics.density
+        return (dp * density).toInt()
+    }
+
 
     override fun getItemCount(): Int = priceList.size
 }
