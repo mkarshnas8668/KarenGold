@@ -121,7 +121,7 @@
         app:layout_constraintVertical_bias="0.527" />
 
     <TextView
-        android:id="@+id/txt_price_money3"
+        android:id="@+id/txt_price_crypto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sans_fa_name_regular"
