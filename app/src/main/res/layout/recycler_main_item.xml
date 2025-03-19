@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/img_gold_18"
+        android:id="@+id/img_price"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
@@ -38,9 +38,9 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/img_gold_18"
-        app:layout_constraintEnd_toStartOf="@+id/img_gold_18"
-        app:layout_constraintTop_toTopOf="@+id/img_gold_18"
+        app:layout_constraintBottom_toBottomOf="@+id/img_price"
+        app:layout_constraintEnd_toStartOf="@+id/img_price"
+        app:layout_constraintTop_toTopOf="@+id/img_price"
         app:layout_constraintVertical_bias="0.04"
         tools:text="گرم طلای 18 عیار" />
 
