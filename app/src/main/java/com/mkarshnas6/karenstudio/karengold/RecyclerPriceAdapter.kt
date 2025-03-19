@@ -47,29 +47,61 @@ class PriceAdapter(private val priceList: List<PriceItem>) :
         holder.color_change.setBackgroundColor(color)
         holder.changePercent.setTextColor(color)
 
-        // تنظیم پرچم بر اساس نماد
         val context = holder.itemView.context
-        val flagResource = context.resources.getIdentifier(
-            "flag_${item.symbol.lowercase()}", "drawable", context.packageName
-        )
+        val isCrypto = item.symbol.equals("BTC", ignoreCase = true) || item.symbol.equals(
+            "ETH",
+            ignoreCase = true
+        ) ||
+                item.symbol.equals("dash", ignoreCase = true) || item.symbol.equals(
+            "xrp",
+            ignoreCase = true
+        ) ||
+                item.symbol.equals("ltc", ignoreCase = true)
 
-        if (flagResource != 0) {
-            holder.imgFlag.setImageResource(flagResource)
+        if (isCrypto) {
+            val cryptoFlagResource = context.resources.getIdentifier(
+                "crypto_${item.symbol.lowercase()}", "drawable", context.packageName
+            )
 
-            // کاهش اندازه تصویر به مقدار 5dp
-            val params = holder.imgFlag.layoutParams
-            params.width = dpToPx(holder.itemView.context, 70) // 75dp - 5dp
-            params.height = dpToPx(holder.itemView.context, 70) // 75dp - 5dp
-            holder.imgFlag.layoutParams = params
+            if (cryptoFlagResource != 0) {
+                holder.imgFlag.setImageResource(cryptoFlagResource)
+                holder.imgFlag.scaleType = ImageView.ScaleType.CENTER_CROP
+                val params = holder.imgFlag.layoutParams
+                params.width = dpToPx(holder.itemView.context, 70)
+                params.height = dpToPx(holder.itemView.context, 70)
+                holder.imgFlag.layoutParams = params
+            } else {
+                holder.imgFlag.setImageResource(R.drawable.ic_18)
+                holder.imgFlag.scaleType = ImageView.ScaleType.CENTER_CROP
 
+                val params = holder.imgFlag.layoutParams
+                params.width = dpToPx(holder.itemView.context, 75)
+                params.height = dpToPx(holder.itemView.context, 75)
+                holder.imgFlag.layoutParams = params
+            }
         } else {
-            holder.imgFlag.setImageResource(R.drawable.ic_18)
-            val params = holder.imgFlag.layoutParams
-            params.width = dpToPx(holder.itemView.context, 75)
-            params.height = dpToPx(holder.itemView.context, 75)
-            holder.imgFlag.layoutParams = params
-        }
+            val flagResource = context.resources.getIdentifier(
+                "flag_${item.symbol.lowercase()}", "drawable", context.packageName
+            )
 
+            if (flagResource != 0) {
+                holder.imgFlag.setImageResource(flagResource)
+                holder.imgFlag.scaleType = ImageView.ScaleType.FIT_CENTER
+
+                val params = holder.imgFlag.layoutParams
+                params.width = dpToPx(holder.itemView.context, 70)
+                params.height = dpToPx(holder.itemView.context, 70)
+                holder.imgFlag.layoutParams = params
+            } else {
+                holder.imgFlag.setImageResource(R.drawable.ic_18)
+                holder.imgFlag.scaleType = ImageView.ScaleType.FIT_CENTER
+
+                val params = holder.imgFlag.layoutParams
+                params.width = dpToPx(holder.itemView.context, 75)
+                params.height = dpToPx(holder.itemView.context, 75)
+                holder.imgFlag.layoutParams = params
+            }
+        }
     }
 
     fun dpToPx(context: Context, dp: Int): Int {
