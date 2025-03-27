@@ -34,116 +34,32 @@
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/sans_fa_name_regular"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="50px"
         app:layout_constraintBottom_toBottomOf="@+id/img_price"
         app:layout_constraintEnd_toStartOf="@+id/img_price"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_unit"
         app:layout_constraintTop_toTopOf="@+id/img_price"
-        app:layout_constraintVertical_bias="0.04"
+        app:layout_constraintVertical_bias="0.543"
         tools:text="گرم طلای 18 عیار" />
 
     <TextView
         android:id="@+id/txt_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/sans_fa_name_regular"
         android:gravity="left"
         android:textColor="@color/gold_text"
         android:textSize="40px"
         app:layout_constraintBottom_toBottomOf="@+id/txt_name"
-        app:layout_constraintStart_toEndOf="@+id/color_show_change_price"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt_name"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="2/200/000" />
 
-    <TextView
-        android:id="@+id/txt_unit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/white"
-        android:textSize="40px"
-        tools:text="تومان"
-        android:fontFamily="@font/sans_fa_name_regular"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_price"
-        app:layout_constraintStart_toEndOf="@+id/txt_price"
-        app:layout_constraintTop_toTopOf="@+id/txt_price" />
-
-    <TextView
-        android:id="@+id/txt_change_percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/sans_fa_name_regular"
-        android:textColor="@color/green"
-        android:textSize="40px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txt_price"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_price"
-        app:layout_constraintTop_toBottomOf="@+id/txt_price"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="16.00"
-        />
-
-    <TextView
-        android:id="@+id/txt_symbol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="50px"
-        android:textColor="@color/white"
-        android:fontFamily="@font/sans_fa_name_regular"
-        tools:text="USD"
-        app:layout_constraintEnd_toEndOf="@+id/txt_name"
-        app:layout_constraintStart_toStartOf="@+id/txt_name"
-        app:layout_constraintTop_toBottomOf="@+id/txt_name" />
-
-    <TextView
-        android:id="@+id/txt_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/sans_fa_name_regular"
-        android:textColor="@color/white"
-        android:textSize="40px"
-        app:layout_constraintEnd_toEndOf="@+id/txt_unit"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/txt_change_percent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_unit"
-        tools:text="15:07" />
-
-    <View
-        android:id="@+id/color_show_change_price"
-        android:layout_width="13dp"
-        android:layout_height="13dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/green"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_price"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_price"
-        app:layout_constraintVertical_bias="0.100000024" />
-
-    <TextView
-        android:id="@+id/txt_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/sans_fa_name_regular"
-        android:textSize="40px"
-        tools:text="1400/33/22"
-        app:layout_constraintEnd_toEndOf="@+id/txt_change_percent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txt_change_percent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_change_percent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

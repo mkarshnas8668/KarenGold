@@ -4,6 +4,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("FreeTsetmcBourseApi/Api_Free_Gold_Currency_v2.json")
+    @GET("api/v1/currencies")
     fun getPrices(): Call<PriceResponse>
 }

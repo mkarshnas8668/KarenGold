@@ -7,7 +7,7 @@ data class PriceItem(
     val name: String,         // نام (بیت کوین، اتریوم و ...)
     val price: Double,        // قیمت
     val change_percent: Double, // درصد تغییر قیمت
-    val unit: String          // واحد پولی (تومان، دلار)
+    val label : String
 )
 
 

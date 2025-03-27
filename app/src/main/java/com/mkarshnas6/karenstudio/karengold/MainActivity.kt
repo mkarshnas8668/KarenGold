@@ -3,6 +3,7 @@ package com.mkarshnas6.karenstudio.karengold
 import PersianDate
 import PriceAdapter
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -14,6 +15,7 @@ import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -71,21 +73,51 @@ class MainActivity : AppCompatActivity() {
             binding.txtPriceCrypto.setTextColor(getColor(R.color.white_text))
             binding.txtPriceMoney.setTextColor(getColor(R.color.gold_text))
         }
+
+//    set last date ....
+        RetrofitClient.instance.getPrices().enqueue(object : Callback<PriceResponse> {
+            override fun onResponse(call: Call<PriceResponse>, response: Response<PriceResponse>) {
+                if (response.isSuccessful) {
+                    val priceResponse = response.body()
+                    priceResponse?.let {
+                        binding.txtLastUpdate.text = "${it.message}\n${it.last_update}"
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<PriceResponse>, t: Throwable) {
+                Log.e("API_ERROR", "Error: ${t.message}")
+                binding.txtLastUpdate.text = "خطا در دریافت اطلاعات"
+            }
+        })
+
     }
+
 
     private fun fetchData() {
         RetrofitClient.instance.getPrices().enqueue(object : Callback<PriceResponse> {
             override fun onResponse(call: Call<PriceResponse>, response: Response<PriceResponse>) {
                 if (response.isSuccessful && response.body() != null) {
-                    // Save the data separately for gold, currency, and cryptocurrency
-                    allGoldPrices = response.body()!!.gold
-                    allCurrencyPrices = response.body()!!.currency
-                    allCryptoPrices = response.body()!!.cryptocurrency
+                    val priceResponse = response.body()!!
 
-                    // Initially show all prices (or can be changed to only show gold)
+                    // بررسی `null` بودن `data`
+                    val data = priceResponse.data
+                    if (data == null) {
+                        Toast.makeText(this@MainActivity, "داده‌ای دریافت نشد!", Toast.LENGTH_SHORT)
+                            .show()
+                        return
+                    }
+
+                    allGoldPrices = data.golds ?: emptyList()
+                    allCurrencyPrices = data.currencies ?: emptyList()
+                    allCryptoPrices = data.cryptocurrencies ?: emptyList()
+
                     priceList.clear()
                     priceList.addAll(allGoldPrices)
                     adapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(this@MainActivity, "خطا در دریافت اطلاعات", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 
@@ -95,6 +127,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
 
     // Function to display only Gold prices
     private fun showGoldPrices() {
