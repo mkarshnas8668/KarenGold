@@ -143,10 +143,21 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_last_update"
+        app:layout_constraintBottom_toTopOf="@+id/banner_ad_bottom"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <com.adivery.sdk.AdiveryBannerAdView
+        android:id="@+id/banner_ad_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:banner_size="smart_banner"
+        app:layout_constraintBottom_toTopOf="@+id/view_cat1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:placement_id="67d4bf07-1f24-4a26-97c6-7ee0e9b6e02d" />
 
     <View
         android:id="@+id/view_cat1"

@@ -63,4 +63,7 @@ dependencies {
     implementation(libs.retrofit)
     // gson converter
     implementation(libs.converter.gson)
+
+//    add adivary ......
+    implementation("com.adivery:sdk:4.8.3")
 }

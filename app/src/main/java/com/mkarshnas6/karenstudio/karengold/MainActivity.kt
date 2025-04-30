@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.adivery.sdk.Adivery
+import com.adivery.sdk.AdiveryAdListener
 import com.mkarshnas6.karenstudio.karengold.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,11 +27,42 @@ class MainActivity : AppCompatActivity() {
     private var allGoldPrices: List<PriceItem> = emptyList()
     private var allCurrencyPrices: List<PriceItem> = emptyList()
     private var allCryptoPrices: List<PriceItem> = emptyList()
+    private var lastPauseTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        start show ads
+
+        Adivery.configure(application, "364e792f-ca2e-421b-b30b-7eeea8489c66")
+        Adivery.prepareAppOpenAd(this, "2ebab61d-303d-490c-83a8-b133dd960369")
+        val bannerAd_bottom = binding.bannerAdBottom
+
+        if (Adivery.isLoaded("2ebab61d-303d-490c-83a8-b133dd960369")) {
+            Adivery.showAppOpenAd(this, "2ebab61d-303d-490c-83a8-b133dd960369")
+        }
+        
+
+        //        banner bottom
+        bannerAd_bottom.setBannerAdListener(object : AdiveryAdListener() {
+            override fun onError(reason: String) {
+                Log.e("adivary", "${reason}")
+            }
+
+            override fun onAdClicked() {
+                Toast.makeText(
+                    this@MainActivity,
+                    "خیلی ممنون که کلیک کردی ❤ :)",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+
+        bannerAd_bottom.loadAd()
+
+//        end shwo ADs
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
@@ -149,4 +182,20 @@ class MainActivity : AppCompatActivity() {
         priceList.addAll(allCryptoPrices)
         adapter.notifyDataSetChanged()
     }
+
+    override fun onResume() {
+        super.onResume()
+        val pauseTime = System.currentTimeMillis() - lastPauseTime
+        if (pauseTime > 5000) {
+            if (Adivery.isLoaded("2ebab61d-303d-490c-83a8-b133dd960369")) {
+                Adivery.showAppOpenAd(this, "2ebab61d-303d-490c-83a8-b133dd960369")
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        lastPauseTime = System.currentTimeMillis()
+    }
+
 }
