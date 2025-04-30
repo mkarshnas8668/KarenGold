@@ -45,6 +45,7 @@
         android:fontFamily="@font/sans_fa_name_bold"
         android:textSize="44px"
         android:textStyle="bold"
+        android:textColor="@color/dark_gray"
         app:layout_constraintEnd_toEndOf="@+id/txt_persion_date"
         app:layout_constraintStart_toStartOf="@+id/txt_persion_date"
         app:layout_constraintTop_toBottomOf="@+id/txt_persion_date"
@@ -59,6 +60,7 @@
         android:layout_marginEnd="5dp"
         android:background="@drawable/back_gray_view"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:ignore="RtlSymmetry" />
@@ -140,26 +142,43 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_last_update"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view_cat1"
+        android:layout_width="0dp"
+        android:layout_height="1.7dp"
+        android:background="@drawable/gravity_back_line_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/txt_last_update"
+        app:layout_constraintEnd_toEndOf="@+id/txt_last_update"
+        app:layout_constraintStart_toStartOf="@+id/txt_last_update" />
 
     <TextView
         android:id="@+id/txt_last_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:background="@drawable/back_txt_lastupdate"
-        android:text="TextView"
-        android:padding="6dp"
-        android:textSize="37px"
-        android:textColor="@color/black"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/sans_fa_name_bold"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="در حال بارگذاری ..."
+        android:textColor="@color/gold_text"
+        android:textSize="37px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view_cat2"
+        android:layout_width="0dp"
+        android:layout_height="1.7dp"
+        android:background="@drawable/gravity_back_line_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/txt_last_update"
+        app:layout_constraintEnd_toEndOf="@+id/txt_last_update"
+        app:layout_constraintStart_toStartOf="@+id/txt_last_update" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
